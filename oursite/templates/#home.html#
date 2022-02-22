@@ -8,5 +8,9 @@
     <p>You must login first.</p>
     <p><a href="{% url 'login' %}">Login</a></p>
     <p><a href="{% url 'signup' %}">Create a new Account</a></p>
-{% endif %}
+
+<h2>Apps Gallery </h2>
+<ul>
+    <li><a href="{% url 'library:index' %}">Library</a></li>
+</ul>
 {% endblock %}

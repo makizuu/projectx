@@ -3,7 +3,7 @@
 
 <p></p><a href="{% url 'library:create' %}">{% trans "Add a new book" %}</a></p>
 
-<h1>Latest Books</h1>
+<h1>Books</h1>
 {% if latest_books %}
     <ul>
     {% for book in latest_books %}
