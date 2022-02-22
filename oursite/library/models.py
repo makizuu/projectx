@@ -20,3 +20,8 @@ class Book(models.Model):
     genres = models.ManyToManyField(Genre)
     def __str__(self):
         return f"{self.title} ({self.pub_date.year})"
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['title',]),
+        ]

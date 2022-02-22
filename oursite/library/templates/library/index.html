@@ -1,29 +1,81 @@
-{% load i18n %}
-{% load static %}
-
-<h1>Books</h1>
-{% if latest_books %}
-    <ul>
-    {% for book in latest_books %}
-        <li><h2>{{ book.title }}</h2>
-        <p>Published: {{ book.pub_date }}</p>
-        <p>Authored by:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title> </title>
+        <script>
+        function search() {
+            var title = document.getElementById("book2").value;
+            $.getJSON("search", {title}, function(data) {
+                var s = "Nothing found";
+                data = JSON.parse(data);
+                if (data && data.length>0) {
+                    s = "<ul>";
+                    for(let d of data) {
+                        s += "<li>"+d;
+                    }
+                    s += "</ul>";
+                }
+                $("#json_reply").html(s); 
+            });
+        }
+        </script>
+    </head>
+    <body>
+    {% load i18n %}
+    {% load static %}
+    <h1>Search Books (normal synchronous)</h1>
+    <form action="" method="get">
+        <label for="book">Book:</label>
+        <input type="text" id="book" name="book" size="40" autofocus>
+        <input type="submit" value="Search">
+        <br>
+        <output>
+        {% if titles %}
         <ul>
-            {% for author in book.authors.all %}
-            <li>{{ author.first_name }} {{ author.last_name }}</li>
+            {% for title in titles %}
+                <li>{{ title }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>no titles found.</p>
+        {% endif %}
+        </output>
+    </form>
+    <h1>Search Books</h1>
+    <form>
+        <label for="book2">Book:</label>
+        <input type="text" id="book2" name="book2" size="40">
+        <input type="button" value="Search" onclick="search()">
+        <br>
+        <output id="json_reply"></output>
+    </form>
+    <h1>Books</h1>
+    {% if latest_books %}
+        <ul>
+        {% for book in latest_books %}
+            <li><h2>{{ book.title }}</h2>
+            <p>Published: {{ book.pub_date }}</p>
+            <p>Authored by:
+            <ul>
+                {% for author in book.authors.all %}
+                <li>{{ author.first_name }} {{ author.last_name }}</li>
+                {% endfor %}
+            </ul></p>
+        <p>Genres:
+            <ul>
+            {% for genre in book.genres.all %}
+            <li>{{ genre.name }}</li>
             {% endfor %}
         </ul></p>
-	<p>Genres:
-	    <ul>
-	      {% for genre in book.genres.all %}
-	      <li>{{ genre.name }}</li>
-	      {% endfor %}
-	</ul></p>
-        <p><a href="{{ book.id }}/">Update book info</a></p>
-        <p><a href="{{ book.id }}/delete/">Delete book</a></p>
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>{% trans "No new books were available." %}</p>
-{% endif %}
+            <p><a href="{{ book.id }}/">Update book info</a></p>
+            <p><a href="{{ book.id }}/delete/">Delete book</a></p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans "No new books were available." %}</p>
+    {% endif %}
+    </body>
+</html>
