@@ -4,53 +4,28 @@
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title> </title>
-        <script>
-        function search() {
-            var title = document.getElementById("book2").value;
-            $.getJSON("search", {title}, function(data) {
-                var s = "Nothing found";
-                data = JSON.parse(data);
-                if (data && data.length>0) {
-                    s = "<ul>";
-                    for(let d of data) {
-                        s += "<li>"+d;
-                    }
-                    s += "</ul>";
-                }
-                $("#json_reply").html(s); 
-            });
-        }
-        </script>
     </head>
     <body>
-    {% load i18n %}
-    {% load static %}
-    <h1>Search Books (normal synchronous)</h1>
+    <h1>Search Words (normal synchronous)</h1>
     <form action="" method="get">
-        <label for="book">Book:</label>
-        <input type="text" id="book" name="book" size="40" autofocus>
+        <label for="search">Book:</label>
+        <input type="text" id="search" name="search" size="40" autofocus>
         <input type="submit" value="Search">
         <br>
         <output>
-        {% if titles %}
+        {% if latest_books %}
         <ul>
-            {% for title in titles %}
-                <li>{{ title }}</li>
+            {% for book in latest_books %}
+                <li>{{ book.title }}</li>
             {% endfor %}
         </ul>
         {% else %}
-            <p>no titles found.</p>
+            <p>no definitions found.</p>
         {% endif %}
         </output>
     </form>
-    <h1>Search Books</h1>
-    <form>
-        <label for="book2">Book:</label>
-        <input type="text" id="book2" name="book2" size="40">
-        <input type="button" value="Search" onclick="search()">
-        <br>
-        <output id="json_reply"></output>
-    </form>
+    {% load i18n %}
+    {% load static %}
     <h1>Books</h1>
     {% if latest_books %}
         <ul>

@@ -12,14 +12,14 @@ import json
 #Create your views here.
 
 def index(request):
-    title = ''
-    titles = []
-    if 'title' in request.GET:
-        title = request.GET['title']
-        if len(word)>0:
-            titles = Dictionary.objects.filter(
-                title__icontains=title).order_by('title')
-    context = {"titles": titles}
+    book = ''
+    latest_books = []
+    if 'book' in request.GET:
+        book = request.GET['book']
+        if len(book)>0:
+            latest_books = Dictionary.objects.filter(
+                book__icontains=book).order_by('book')
+    context = {"latest_books": latest_books}
     return render(request, 'library/index.html', context)
 
 class CreateBookView(CreateView):
@@ -46,18 +46,3 @@ class IndexView(generic.ListView):
         return Book.objects.filter(
             pub_date__lte=timezone.now()
         ).order_by('-pub_date')[:5]
-
-class BookForm(ModelForm):
-    class Meta:
-        model = Book
-        fields = ['title','title']
-
-def search(request):
-    def_list = [];
-    if 'title' in request.GET:
-        titles = request.GET['title']
-        if len(title)>0:
-            titles = Dictionary.objects.filter(title__icontains=title)
-            def_list = [str(title) for title in titles]
-    def_json = json.dumps(def_list)
-    return JsonResponse(def_json, safe=False)
