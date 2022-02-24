@@ -13,10 +13,20 @@ class Genre(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+class Customer(models.Model):
+    first_name = models.CharField (max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    address = models.CharField(max_length=100)
+#    books = models.ForeignKey(Book, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.first_name}{self.last_name}"
+
 class Book(models.Model):
     title = models.CharField(max_length=200)
     pub_date = models.DateField('year published')
     authors = models.ManyToManyField(Author)
     genres = models.ManyToManyField(Genre)
+#    customers = models.ForeignKey(Customer, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.title} ({self.pub_date.year})"

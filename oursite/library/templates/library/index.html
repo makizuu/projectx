@@ -13,9 +13,9 @@
         <input type="submit" value="Search">
         <br>
         <output>
-        {% if latest_books %}
+        {% if all_books %}
         <ul>
-            {% for book in latest_books %}
+            {% for book in all_books %}
                 <li>{{ book.title }}</li>
             {% endfor %}
         </ul>
@@ -27,9 +27,9 @@
     {% load i18n %}
     {% load static %}
     <h1>Books</h1>
-    {% if latest_books %}
+    {% if all_books %}
         <ul>
-        {% for book in latest_books %}
+        {% for book in all_books %}
             <li><h2>{{ book.title }}</h2>
             <p>Published: {{ book.pub_date }}</p>
             <p>Authored by:
@@ -44,8 +44,9 @@
             <li>{{ genre.name }}</li>
             {% endfor %}
         </ul></p>
-            <p><a href="{{ book.id }}/">Update book info</a></p>
-            <p><a href="{{ book.id }}/delete/">Delete book</a></p>
+            <!--<p><a href="{{ book.id }}/">Update book info</a></p>
+            <p><a href="{{ book.id }}/delete/">Delete book</a></p> -->
+            <!-- Tänne tulee uudet luokat LoanBook ja ReturnBook -->
             </li>
         {% endfor %}
         </ul>

@@ -5,22 +5,18 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.urls import reverse_lazy
-from .models import Book, Author, Genre
+from .models import Book, Author, Genre, Customer
 from django.forms import ModelForm
 import json
 
 #Create your views here.
 
-def index(request):
-    book = ''
-    latest_books = []
-    if 'book' in request.GET:
-        book = request.GET['book']
-        if len(book)>0:
-            latest_books = Dictionary.objects.filter(
-                book__icontains=book).order_by('book')
-    context = {"latest_books": latest_books}
-    return render(request, 'library/index.html', context)
+def index(request, book):
+    if request.method == 'GET':
+        search = request.GET.get('book')
+        post = book.objects.all().filter(content__contains=results)
+    return render(request, {'post': post})
+
 
 class CreateBookView(CreateView):
     model = Book
@@ -39,10 +35,12 @@ class DeleteBookView(DeleteView):
     #template_name =- 'library/delete.html'
     success_url = reverse_lazy('library:index')
 
+#Täytyy tehdä LoanBook & ReturnBook Classit ja poistaa normaalikäyttäjältä Update, Create ja Delete mahdollisuudet.
+
 class IndexView(generic.ListView):
     template_name = 'library/index.html'
-    context_object_name = 'latest_books'
+    context_object_name = 'all_books'
     def get_queryset(self):
         return Book.objects.filter(
             pub_date__lte=timezone.now()
-        ).order_by('-pub_date')[:5]
+        ).order_by('title')[:10]

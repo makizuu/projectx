@@ -78,10 +78,18 @@ WSGI_APPLICATION = 'oursite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'librarydb',
+        'USER': 'reeee',
+        'PASSWORD': '2022AdminHAMK',
+        'HOST': '13.74.149.182',
+        'PORT': '',
     }
-}
+    
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
 
 
 # Password validation
