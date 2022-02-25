@@ -13,14 +13,14 @@ class Genre(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class Customer(models.Model):
-    first_name = models.CharField (max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField()
-    address = models.CharField(max_length=100)
+#class Customer(models.Model):
+#    first_name = models.CharField (max_length=100)
+#    last_name = models.CharField(max_length=100)
+#    email = models.EmailField()
+#    address = models.CharField(max_length=100)
 #    books = models.ForeignKey(Book, on_delete=models.CASCADE)
-    def __str__(self):
-        return f"{self.first_name}{self.last_name}"
+#    def __str__(self):
+#        return f"{self.first_name}{self.last_name}"
 
 class Book(models.Model):
     title = models.CharField(max_length=200)

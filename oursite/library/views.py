@@ -5,17 +5,24 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.urls import reverse_lazy
-from .models import Book, Author, Genre, Customer
+from .models import Book, Author, Genre
 from django.forms import ModelForm
 import json
 
 #Create your views here.
 
-def index(request, book):
-    if request.method == 'GET':
-        search = request.GET.get('book')
-        post = book.objects.all().filter(content__contains=results)
-    return render(request, {'post': post})
+def index(request):
+#    if request.method == 'GET':
+    search = request.GET.get('search', "")
+#        post = book.objects.all().filter(content__contains=results)
+    if search != "":
+        all_books2 = Book.objects.filter(pub_date__lte=timezone.now()).filter(title=search).order_by('title')[:10]
+    else:
+        all_books2 = Book.objects.filter(
+                pub_date__lte=timezone.now()
+            ).order_by('title')[:10]
+    context = {'all_books': all_books2}
+    return render(request, 'library/index.html', context)
 
 
 class CreateBookView(CreateView):
