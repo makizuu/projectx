@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'librarydb',
-        'USER': 'reeee',
+        'USER': 'eeeer',
         'PASSWORD': '2022AdminHAMK',
-        'HOST': '13.74.149.182',
+        'HOST': 'localhost',
         'PORT': '',
     }
     
