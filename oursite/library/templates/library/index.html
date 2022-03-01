@@ -2,13 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title> </title>
     </head>
     <body>
-    <h1>Search Words (normal synchronous)</h1>
+    <!--<h1>Search for books</h1>
     <form action="" method="get">
-        <label for="search">Book:</label>
+        <label for="search">Book title:</label>
         <input type="text" id="search" name="search" size="40" autofocus>
         <input type="submit" value="Search">
         <br>
@@ -16,14 +15,29 @@
         {% if all_books %}
         <ul>
             {% for book in all_books %}
-                <li>{{ book.title }}</li>
             {% endfor %}
         </ul>
         {% else %}
             <p>no definitions found.</p>
         {% endif %}
         </output>
-    </form>
+    </form>-->
+    <div class="searchBar">     
+            <h3>Search for books</h3>
+            <form method="post" action="/library/home/searchResult/">
+                {% csrf_token %}
+                    <div>
+                    <input type="radio" name='choice' id='s-title' value='t' class="rad">
+                    <label for='s-title'>TITLE</label>
+                    <input type="radio" name='choice' id='s-author' value='a' class="rad">
+                    <label for='s-author'>AUTHOR</label>
+                    </div>
+                    <div>
+                    <input type="search" name='s' placeholder="search for book" class="searchBox">
+                    <input type="submit" value="search" class="btn btn-s">
+                    </div>
+            </form>
+        </div>
     {% load i18n %}
     {% load static %}
     <h1>Books</h1>

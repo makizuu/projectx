@@ -51,3 +51,14 @@ class IndexView(generic.ListView):
         return Book.objects.filter(
             pub_date__lte=timezone.now()
         ).order_by('title')[:10]
+
+def searchresults(request):
+    s = request.POST['s']
+    choice = request.POST.get('choice')
+    if choice == 'a':
+        book_list = Book.objects.filter(author__icontains=s)
+    else:
+        book_list = Book.objects.filter(title__icontains=s)
+
+    context = {'book_list':book_list, 'choice':choice, 's':s, }
+    return render(request, 'library/searchResults.html', context)

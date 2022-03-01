@@ -4,7 +4,7 @@ from .models import Author, Genre, Book
 # Register your models here.
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'pub_date')
+    list_display = ('title', 'pub_date',)
     list_filter = ['pub_date', 'genres']
     search_fields = ['title']
 
