@@ -1,0 +1,271 @@
+[
+{
+    "model": "library.author",
+    "pk": 1,
+    "fields": {
+        "first_name": "Joanne",
+        "last_name": "Rowling"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 2,
+    "fields": {
+        "first_name": "Stephen",
+        "last_name": "King"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 3,
+    "fields": {
+        "first_name": "George",
+        "last_name": "Martin"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 4,
+    "fields": {
+        "first_name": "John",
+        "last_name": "Tolkien"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 5,
+    "fields": {
+        "first_name": "William",
+        "last_name": "Shakespear"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 6,
+    "fields": {
+        "first_name": "Elif",
+        "last_name": "Batuman"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 7,
+    "fields": {
+        "first_name": "Väinö",
+        "last_name": "Linna"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 8,
+    "fields": {
+        "first_name": "Juha",
+        "last_name": "Vuorinen"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 9,
+    "fields": {
+        "first_name": "Mary",
+        "last_name": "Shelley"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 10,
+    "fields": {
+        "first_name": "Neil",
+        "last_name": "Gailman"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 11,
+    "fields": {
+        "first_name": "Terry",
+        "last_name": "Pratchett"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 12,
+    "fields": {
+        "first_name": "Peter",
+        "last_name": "Straub"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 13,
+    "fields": {
+        "first_name": "Michael",
+        "last_name": "Punken"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 14,
+    "fields": {
+        "first_name": "Stef",
+        "last_name": "Maruch"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 15,
+    "fields": {
+        "first_name": "Aahz",
+        "last_name": "Maruch"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 16,
+    "fields": {
+        "first_name": "Andrzej",
+        "last_name": "Sapkowski"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 17,
+    "fields": {
+        "first_name": "Cormac",
+        "last_name": "McCarthy"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 18,
+    "fields": {
+        "first_name": "Larry",
+        "last_name": "McMurtry"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 19,
+    "fields": {
+        "first_name": "Norman",
+        "last_name": "Mailer"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 20,
+    "fields": {
+        "first_name": "Alex",
+        "last_name": "Michaelides"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 21,
+    "fields": {
+        "first_name": "Barry",
+        "last_name": "Burd"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 22,
+    "fields": {
+        "first_name": "Sequoia",
+        "last_name": "Nagamatsu"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 23,
+    "fields": {
+        "first_name": "Holly",
+        "last_name": "Black"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 24,
+    "fields": {
+        "first_name": "Kurt",
+        "last_name": "Wonnegut"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 1,
+    "fields": {
+        "name": "Fantasy"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 2,
+    "fields": {
+        "name": "Horror"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 3,
+    "fields": {
+        "name": "Tragedy"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 4,
+    "fields": {
+        "name": "Comedy"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 5,
+    "fields": {
+        "name": "War Novel"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 6,
+    "fields": {
+        "name": "Sci-fi"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 7,
+    "fields": {
+        "name": "Western"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 8,
+    "fields": {
+        "name": "Adventure"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 9,
+    "fields": {
+        "name": "Technology"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 10,
+    "fields": {
+        "name": "Nonfiction"
+    }
+},
+{
+    "model": "library.genre",
+    "pk": 11,
+    "fields": {
+        "name": "Triller"
+    }
+}
+]
