@@ -1,0 +1,176 @@
+[
+  {
+    "model": "library.book",
+    "pk": 1,
+    "fields": {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "pub_date": "1997-07-22",
+      "authors": [1],
+      "genres": [1, 8]
+    }
+  },
+
+  {
+    "model": "library.book",
+    "pk": 2,
+    "fields": {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "pub_date": "1998-07-25",
+      "authors": [1],
+      "genres": [1, 8]
+    }
+  },
+
+  {
+    "model": "library.book",
+    "pk": 3,
+    "fields": {
+      "title": "It",
+      "pub_date": "1986-02-22",
+      "authors": [2],
+      "genres": [2]
+    }
+  },
+
+  {
+    "model": "library.book",
+    "pk": 4,
+    "fields": {
+      "title": "The Shining",
+      "pub_date": "1977-07-07",
+      "authors": [2],
+      "genres": [2, 3]
+    }
+  },
+
+  {
+    "model": "library.book",
+    "pk": 5,
+    "fields": {
+      "title": "Talisman",
+      "pub_date": "1984-01-12",
+      "authors": [2, 12],
+      "genres": [2, 6]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 6,
+    "fields": {
+      "title": "Python for Dummies",
+      "pub_date": "2006-03-22",
+      "authors": [14, 15],
+      "genres": [9, 10]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 7,
+    "fields": {
+      "title": "Good Omens",
+      "pub_date": "1990-05-29",
+      "authors": [10, 11],
+      "genres": [2, 4]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 8,
+    "fields": {
+      "title": "Game of thrones",
+      "pub_date": "1996-02-09",
+      "authors": [3],
+      "genres": [1, 8]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 9,
+    "fields": {
+      "title": "Lord of the rings",
+      "pub_date": "1954-02-19",
+      "authors": [4],
+      "genres": [1, 8]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 10,
+    "fields": {
+      "title": "Macbeth",
+      "pub_date": "1623-07-21",
+      "authors": [5],
+      "genres": [3]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 11,
+    "fields": {
+      "title": "The idiot",
+      "pub_date": "2017-07-02",
+      "authors": [6],
+      "genres": [4]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 12,
+    "fields": {
+      "title": "Unknown Soldier",
+      "pub_date": "1954-01-26",
+      "authors": [7],
+      "genres": [5]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 13,
+    "fields": {
+      "title": "The Hangover Diaries",
+      "pub_date": "1998-02-22",
+      "authors": [8],
+      "genres": [4]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 14,
+    "fields": {
+      "title": "Frankenstein",
+      "pub_date": "1818-09-01",
+      "authors": [9],
+      "genres": [2, 6]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 15,
+    "fields": {
+      "title": "Kirja",
+      "pub_date": "1990-11-11",
+      "authors": [10, 11],
+      "genres": [2, 40]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 16,
+    "fields": {
+      "title": "Talisman",
+      "pub_date": "1984-07-22",
+      "authors": [2, 12],
+      "genres": [2, 6]
+    }
+  },
+  {
+    "model": "library.book",
+    "pk": 17,
+    "fields": {
+      "title": "The Revenant",
+      "pub_date": "2002-12-19",
+      "authors": [13],
+      "genres": [7, 8]
+    }
+  }
+]

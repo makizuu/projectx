@@ -78,10 +78,10 @@ ALLOWED_HOSTS = ["*"]
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "projectx",
-        "USER": "root",
-        "PASSWORD": "root",
-        "HOST": "db",
+        "NAME": "librarydb",
+        "USER": "eeeer",
+        "PASSWORD": "2022AdminHAMK",
+        "HOST": "localhost",
         "PORT": "3306",
     }
     #    'default': {
